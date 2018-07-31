@@ -16,6 +16,7 @@ class SimpleCardActivity : AppCompatActivity() {
         val mSimpleListBinding = DataBindingUtil.setContentView<ActivityCardListBinding>(this, R.layout.activity_card_list)
         val people = Person.getPeopleList(this)
         val mLayoutManager = LinearLayoutManager(this)
+//        val mLayoutManager = GridLayoutManager(this, 2)
         mSimpleListBinding.recyclerView.layoutManager = mLayoutManager
 
         val mAdapter = SimpleCardAdapter(people)

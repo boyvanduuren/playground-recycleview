@@ -18,7 +18,16 @@ data class Person(var fname: String, var lname: String, var role: String, var de
                             ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.obaro)!!),
                     Person("Peter", "Parker", context.resources?.getString(R.string.parker_role)
                             ?: defaultRole, context.resources?.getString(R.string.parker)
-                            ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.parker)!!)
+                            ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.parker)!!),
+                    Person("Barack", "Obama", context.resources?.getString(R.string.obama_role)
+                            ?: defaultRole, context.resources?.getString(R.string.obama)
+                            ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.obama)!!),
+                    Person("Bruce", "Wayne", context.resources?.getString(R.string.wayne_role)
+                            ?: defaultRole, context.resources?.getString(R.string.wayne)
+                            ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.wayne)!!),
+                    Person("Oliver", "Queen", context.resources?.getString(R.string.queen_role)
+                            ?: defaultRole, context.resources?.getString(R.string.queen)
+                            ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.queen)!!)
             )
         }
     }
