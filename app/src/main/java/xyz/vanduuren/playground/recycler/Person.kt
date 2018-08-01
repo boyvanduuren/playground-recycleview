@@ -6,10 +6,10 @@ import android.support.v4.content.ContextCompat
 
 data class Person(var fname: String, var lname: String, var role: String, var description: String, var image: Drawable) {
     companion object {
-        fun getPeopleList(context: Context): List<Person> {
+        fun getPeopleList(context: Context): MutableList<Person> {
             val defaultRole = "Default role"
             val defaultDescription = "Default description"
-            return listOf(
+            return mutableListOf(
                     Person("Clark", "Kent", context.resources?.getString(R.string.kent_role)
                             ?: defaultRole, context.resources?.getString(R.string.kent)
                             ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.kent)!!),
@@ -28,7 +28,11 @@ data class Person(var fname: String, var lname: String, var role: String, var de
                     Person("Oliver", "Queen", context.resources?.getString(R.string.queen_role)
                             ?: defaultRole, context.resources?.getString(R.string.queen)
                             ?: defaultDescription, ContextCompat.getDrawable(context, R.drawable.queen)!!)
-            )
+            ).shuffled().toMutableList()
+        }
+
+        fun getRandom(context: Context): Person {
+            return getPeopleList(context).get(0)
         }
     }
 }
